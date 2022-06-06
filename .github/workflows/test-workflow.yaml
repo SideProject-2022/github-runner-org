@@ -15,6 +15,10 @@ jobs:
         echo Hello, world!
         ls -al
         echo "Org Level self-hosted runner test new"
+    - uses: actions/setup-python@v3
+      with:
+        python-version: "3.8"
+    - uses: aws-actions/setup-sam@v2
     - name: Configure AWS Credentials
       id: credentials
       uses: aws-actions/configure-aws-credentials@v1
