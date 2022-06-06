@@ -34,6 +34,10 @@ jobs:
       uses: azure/setup-helm@v1
       with:
         version: 'v3.7.2'
+    - name: test
+      run: |
+        pip instalal awscli
+        aws --version
     - name: get k8s kube-config
       run: |
         aws eks update-kubeconfig --name ${{ secrets.cluster }}
