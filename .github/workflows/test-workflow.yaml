@@ -10,14 +10,6 @@ jobs:
     environment: dev
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: |
-        echo Hello, world!
-        ls -al
-        echo "Org Level self-hosted runner test new"
-    - uses: actions/setup-python@v3
-      with:
-        python-version: "3.8"
     - uses: aws-actions/setup-sam@v2
     - name: Configure AWS Credentials
       id: credentials
@@ -44,4 +36,4 @@ jobs:
     - name: test
       run: |
         kubectl get namespace
-        kubectl delete pod nginx --namespace nginx
+        kubectl delete pod nginx --namespace action-test
