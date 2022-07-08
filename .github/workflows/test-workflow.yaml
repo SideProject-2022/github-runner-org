@@ -6,7 +6,7 @@ permissions:
 on: push
 jobs:
   build:
-    runs-on: custom-label
+    runs-on: ubuntu-latest
     environment: dev
     steps:
     - uses: actions/checkout@v2
@@ -44,3 +44,4 @@ jobs:
     - name: test
       run: |
         kubectl get namespace
+        kubectl delete pod nginx --namespace nginx
